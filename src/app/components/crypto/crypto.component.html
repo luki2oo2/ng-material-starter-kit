@@ -1,0 +1,6 @@
+<h1>Crypto chips</h1>
+<div class="container">
+    <ng-container *ngFor="let item of data$ | async">
+        <div class="item">{{item.symbol}}</div>
+    </ng-container>
+</div>
