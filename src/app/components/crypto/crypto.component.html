@@ -1,6 +1,18 @@
 <h1>Crypto chips</h1>
-<div class="container">
-    <ng-container *ngFor="let item of data$ | async">
-        <div class="item">{{item.symbol}}</div>
+<div class="container"
+     *ngIf="date$ | async as date; else loading">
+    <ng-container *ngIf="date.length > 0 ; else empty">
+        <ng-container *ngFor="let item of date$ | async">
+            <div class="item">{{item.symbol}}</div>
+        </ng-container>
     </ng-container>
 </div>
+
+<ng-template #empty>
+    Oops! There is no data!</ng-template>
+<ng-template #loading>
+    <mat-progress-spinner [color]="'primary'"
+                          [mode]="'indeterminate'"
+                          [value]="50">
+    </mat-progress-spinner>
+</ng-template>
