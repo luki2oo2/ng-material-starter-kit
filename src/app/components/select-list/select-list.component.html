@@ -1,8 +1,19 @@
-<mat-card>
-    <mat-card-title>
-
-    </mat-card-title>
-    <mat-card-content>
-<mat-selection-list role="list"><mat-list-option role="listitem" *ngFor="let item of data$ | async">{{item}}</mat-list-option></mat-selection-list>
+<mat-card *ngIf="date$ | async as date; else loading">
+    <mat-card-content *ngIf="date.length > 0 ; else empty">
+        <mat-selection-list role="list">
+            <mat-list-option role="listitem"
+                             *ngFor="let item of date$ | async">{{item}}</mat-list-option>
+        </mat-selection-list>
     </mat-card-content>
 </mat-card>
+
+<ng-template #empty>
+    Oops! There is no data!</ng-template>
+<ng-template #loading>
+
+    <mat-progress-spinner [color]="'primary'"
+                          [mode]="'indeterminate'"
+                          [value]="50">
+    </mat-progress-spinner>
+
+</ng-template>

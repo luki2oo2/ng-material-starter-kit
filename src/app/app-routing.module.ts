@@ -14,7 +14,7 @@ import { CryptoComponentModule } from './components/crypto/crypto.component-modu
 import { CheckboxCategoriesComponentModule } from './components/checkbox-categories/checkbox-categories.component-module';
 
 @NgModule({
-  imports: [RouterModule.forRoot([{ path: 'public-holidays', component: HolidaysComponent }, { path: 'section-list', component: SelectListComponent }, { path: 'table', component: TableNamesComponent }, { path: 'list-product', component: ListProductComponent }, { path: 'crypto', component: CryptoComponent }, { path: 'checkbox-categories', component: CheckboxCategoriesComponent }]), HolidaysComponentModule, SelectListComponentModule, TableNamesComponentModule, ListProductComponentModule, CryptoComponentModule, CheckboxCategoriesComponentModule],
+  imports: [RouterModule.forRoot([{ path: 'public-holidays', component: HolidaysComponent }, { path: 'section-list', component: SelectListComponent }, { path: 'table', component: TableNamesComponent }, { path: 'list-product', component: ListProductComponent }, { path: 'crypto', component: CryptoComponent }, { path: 'checkbox-categories', component: CheckboxCategoriesComponent }, { path: 'select-category', component: SelectListComponent }]), HolidaysComponentModule, SelectListComponentModule, TableNamesComponentModule, ListProductComponentModule, CryptoComponentModule, CheckboxCategoriesComponentModule],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
