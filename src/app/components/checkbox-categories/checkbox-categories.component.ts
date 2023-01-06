@@ -10,7 +10,7 @@ import { ProductsService } from '../../services/products.service';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class CheckboxCategoriesComponent {
-  readonly data$: Observable<string[]> = this._productsService.getAll();
+  readonly date$: Observable<string[]> = this._productsService.getAll();
 
   constructor(private _productsService: ProductsService) {
   }

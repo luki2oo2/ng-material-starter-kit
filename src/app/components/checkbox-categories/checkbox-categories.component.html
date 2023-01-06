@@ -1,3 +1,18 @@
 <h2>Categories list</h2>
-<ng-container *ngFor="let item of data$ | async">
-    <input type="checkbox"> {{ item }}</ng-container>
+<ng-container *ngIf="date$ | async as date; else loading">
+    <ng-container *ngIf="date.length > 0 ; else empty">
+        <ng-container *ngFor="let item of date$ | async">
+            <input type="checkbox"> {{ item }}</ng-container>
+    </ng-container>
+</ng-container>
+
+<ng-template #empty>
+    Oops! There is no data!</ng-template>
+<ng-template #loading>
+
+    <mat-progress-spinner [color]="'primary'"
+                          [mode]="'indeterminate'"
+                          [value]="50">
+    </mat-progress-spinner>
+
+</ng-template>
