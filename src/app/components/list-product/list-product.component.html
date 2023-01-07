@@ -3,7 +3,11 @@
     <ng-container *ngIf="date.length > 0 ; else empty">
 
         <mat-list-item role="listitem"
-                       *ngFor="let item of date$ | async">{{item.title}},{{item.price}}$
+                       *ngFor="let item of date$ | async">
+            <span><img style="height:40px"
+                     src="{{item.image}}"
+                     alt=""></span>
+            <div>{{item.title}},{{item.price | currency}}</div>
         </mat-list-item>
     </ng-container>
 </mat-list>
